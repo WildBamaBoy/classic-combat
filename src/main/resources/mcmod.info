@@ -1,0 +1,16 @@
+[
+{
+  "modid": "classiccombat",
+  "name": "Classic Combat",
+  "description": "Restores the classic feel of Minecraft combat.",
+  "version": "1.0.0",
+  "mcversion": "1.10.2",
+  "url": "http://www.radix-shock.com/cc--download.html",
+  "updateUrl": "files.radix-shock.com",
+  "authorList": ["WildBamaBoy", "SheWolfDeadly"],
+  "credits": "",
+  "logoFile": "classiccombat.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
