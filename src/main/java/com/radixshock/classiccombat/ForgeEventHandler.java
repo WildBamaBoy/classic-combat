@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ForgeEventHandler 
 {
 	/** Grab the field used for the swing tick cooldown instead of looking it up for each player. It's all the same. */
-	private static Field targetField = EntityLivingBase.class.getDeclaredFields()[22];
+	private static Field targetField = EntityLivingBase.class.getDeclaredFields()[23];
 	
 	static
 	{
