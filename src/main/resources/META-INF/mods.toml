@@ -1,0 +1,13 @@
+modLoader="javafml"
+loaderVersion="[25,)"
+issueTrackerURL="https://github.com/WildBamaBoy/classic-combat/issues"
+[[mods]]
+modId="classiccombat"
+version="1.0.1"
+displayName="Classic Combat"
+logoFile="classiccombat.png"
+credits=""
+authors="WildBamaBoy"
+description='''
+Disables Minecraft's new combat system - all weapons have no cooldown and do max damage with each attack.
+'''
