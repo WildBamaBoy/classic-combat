@@ -10,10 +10,9 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ForgeEventHandler 
 {
 	/** Grab the field used for the swing tick cooldown instead of looking it up for each player. It's all the same. */
-	private static Field targetField = EntityLivingBase.class.getDeclaredFields()[23];
+	private static Field targetField = EntityLivingBase.class.getDeclaredFields()[24];
 	
-	static
-	{
+	static {
 		//Don't waste time setting accessibility each time. Not required.
 		targetField.setAccessible(true);
 	}
@@ -26,23 +25,15 @@ public class ForgeEventHandler
 	 * Very very fast, measured to be completed in about 0.005 milliseconds.
 	 */
 	@SubscribeEvent
-	public void handleLivingUpdate(LivingUpdateEvent event)
-	{
-		try
-		{
-			if (event.getEntity() instanceof EntityPlayerMP)
-			{
+	public void handleLivingUpdate(LivingUpdateEvent event) {
+		try {
+			if (event.getEntity() instanceof EntityPlayerMP) {
 				EntityPlayerMP player = (EntityPlayerMP)event.getEntity();
-
-				if (targetField.getInt(player) < 20)
-				{
-					targetField.set(player, 20);
+				if (targetField.getInt(player) < 9999) {
+					targetField.set(player, 9999);
 				}
 			}
-		}
-		
-		catch (Exception e)
-		{
+		} catch (Exception e) {
 			//Can't foresee any exceptions, so just throw them out.
 		}
 	}
