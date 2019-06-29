@@ -1,7 +1,7 @@
 package com.wildbamaboy.classiccombat;
 
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
 public class ClassicCombat
 {
     /** Grab the field used for the swing tick cooldown instead of looking it up for each player. It's all the same. */
-    private static Field targetField = EntityLivingBase.class.getDeclaredFields()[25];
+    private static Field targetField = LivingEntity.class.getDeclaredFields()[26];
     static { targetField.setAccessible(true); }
 
     public ClassicCombat() {
@@ -21,8 +21,8 @@ public class ClassicCombat
 
     @SubscribeEvent
     public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
-        if (event.getEntity() instanceof EntityPlayerMP) {
-            EntityPlayerMP player = (EntityPlayerMP) event.getEntity();
+        if (event.getEntity() instanceof ServerPlayerEntity) {
+            ServerPlayerEntity player = (ServerPlayerEntity) event.getEntity();
             try {
                 if (targetField.getInt(player) < 9999) {
                     targetField.set(player, 9999);
